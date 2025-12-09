@@ -1,0 +1,16 @@
+
+sudo -i -u postgres
+
+*** Create a database as Library_db ***
+- CREATE DATABASE Library_db;
+
+**** exit and quit and then connect to Library_db ***
+- psql -U postgres -d Library_db
+
+
+*** Creating User for the databas and giving full access ***
+CREATE USER library_user WITH PASSWORD 'admin';
+
+GRANT ALL PRIVILEGES ON DATABASE Library_db TO library_user;
+GRANT USAGE, CREATE ON SCHEMA public TO library_user;
+
